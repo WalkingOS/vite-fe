@@ -13,6 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("#main");
 
   if (main) {
-    main.innerHTML = `Let's go`;
+    main.innerHTML = `Let's go with Javascript`;
   }
 });
