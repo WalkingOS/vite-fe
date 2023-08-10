@@ -50,4 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttons = document.querySelectorAll(".card-button");
   headlineOnClick(buttons);
+
+  window.addEventListener("resize", () => {
+    const maxHeight = getMaxHeight(cards);
+    setEqualHeight(cards, maxHeight);
+  });
 });
