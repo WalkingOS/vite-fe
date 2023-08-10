@@ -1,4 +1,5 @@
 import "./style.scss";
+import { headlineOnClick } from "./components/button/index";
 
 function init() {
   /*   
@@ -45,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cards = document.querySelectorAll(".card");
   const maxHeight = getMaxHeight(cards);
-
   setEqualHeight(cards, maxHeight);
+
+  const buttons = document.querySelectorAll(".card-button");
+  headlineOnClick(buttons);
 });
