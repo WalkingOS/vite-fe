@@ -16,7 +16,7 @@ function init() {
 function getMaxHeight(cards) {
   let maxHeight = 0;
   cards.forEach((card) => {
-    const cardHeight = card.offsetHeight;
+    const cardHeight = card.clientHeight;
     if (cardHeight > maxHeight) {
       maxHeight = cardHeight;
     }
@@ -47,12 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".card");
   const maxHeight = getMaxHeight(cards);
   setEqualHeight(cards, maxHeight);
+  headlineOnClick(cards);
 
-  const buttons = document.querySelectorAll(".card-button");
-  headlineOnClick(buttons);
-
+  let initialWidth = window.innerWidth;
   window.addEventListener("resize", () => {
+    let currentWidth = window.innerWidth;
+
+    if (initialWidth < currentWidth) {
+      setEqualHeight(cards, 0);
+    }
+
     const maxHeight = getMaxHeight(cards);
     setEqualHeight(cards, maxHeight);
+    initialWidth = currentWidth;
   });
 });
