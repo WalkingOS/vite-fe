@@ -7,6 +7,7 @@ Card Height Constraint:
 Using JavaScript, identify all the card elements within the <ul> list.
 Determine the maximum height among all the cards.
 Apply this maximum height value to each card's style attribute to ensure uniformity.
+
 Button Click Event:
 
 For each card, find the button element within the card's content.

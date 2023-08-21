@@ -9,6 +9,35 @@ function init() {
     */
 }
 
+//Using JavaScript, identify all the card elements within the <ul> list:  
+
+
+//Determine the maximum height among all the cards:
+
+//schleife für ein array
+
+function determineMaxHeight(cards){
+  let maxHeight = 0; //Variable um die endgültige maxHöhe zu speichern
+  cards.forEach((card) => {
+    const cardHeight = card.clientHeight;
+    if (cardHeight > maxHeight) {
+      maxHeight = cardHeight;
+    }
+  });
+  return maxHeight;
+}
+
+//Apply this maximum height value to each card's style attribute to ensure uniformity.
+
+// Anpassen der Karten auf die maximale Höhe
+
+function applyMaxHeight(cards, maxHeight){
+  cards.forEach((card) => {
+    card.style.height = maxHeight + 'px';
+  });
+}
+  
+
 document.addEventListener("DOMContentLoaded", () => {
     init();
 
@@ -18,29 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
         main.innerHTML = `Let's go`;
     }
 
-//Using JavaScript, identify all the card elements within the <ul> list:
-
-   
-    const cards = document.querySelectorAll(".card"); //card Element aus HTML suchen
-    let maxHeight = 0; //Variable um die endgültige maxHöhe zu speichern
-
-//Determine the maximum height among all the cards:
-
-//schleife für ein array
-    cards.forEach(function(card) {
-        const cardHeight = card.offsetHeight; //Variable um die Höhe einer Karte zu speichern und abzurufen
-        if (cardHeight > maxHeight) {
-            maxHeight = cardHeight;
-        }
-
-    });
-
-//Apply this maximum height value to each card's style attribute to ensure uniformity.
-
-// Anpassen der Karten auf die maximale Höhe
-    cards.forEach(function(card) {
-        card.style.height = maxHeight + 'px';
-
+    
+    const cards = document.querySelectorAll(".card");
+    applyMaxHeight(cards, determineMaxHeight(cards));
+    
+  
+    
 
 // For each card, find the button element within the card's content.
 
@@ -66,7 +78,7 @@ if (button) {
     });
 }
     });
-});
+
 
 window.addEventListener("resize", adjustCardHeights);
 
