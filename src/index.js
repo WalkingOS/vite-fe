@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // For each card, find the button element within the card's content.
 
+
+
+}
+)
+
 function alertHeadline(cards){
   cards.forEach((card) => {
     const headline = card.querySelector(".card-headline");
@@ -57,13 +62,10 @@ function alertHeadline(cards){
     if (headline) {
       const message = headline.textContent;
       button.addEventListener("click", () => {
-        window.alert(message));
+        window.alert(message)});
       }
     });
   }
-
-}
-
 
   // Attach a click event listener to each button.
 
