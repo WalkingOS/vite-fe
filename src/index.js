@@ -36,6 +36,19 @@ function applyMaxHeight(cards, maxHeight) {
   });
 }
 
+function alertHeadline(cards) {
+  cards.forEach((card) => {
+    const headline = card.querySelector(".card-headline");
+    const button = card.querySelector(".card-button");
+    if (headline) {
+      const message = headline.textContent;
+      button.addEventListener("click", () => {
+        window.alert(message);
+      });
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   init();
 
@@ -47,29 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cards = document.querySelectorAll(".card");
   applyMaxHeight(cards, determineMaxHeight(cards));
+  alertHeadline(cards);
 
-  // For each card, find the button element within the card's content.
-
-
-
-}
-)
-
-function alertHeadline(cards){
-  cards.forEach((card) => {
-    const headline = card.querySelector(".card-headline");
-    const button = card.querySelector(".card-button");
-    if (headline) {
-      const message = headline.textContent;
-      button.addEventListener("click", () => {
-        window.alert(message)});
-      }
-    });
-  }
-
-  // Attach a click event listener to each button.
-
- 
+});
 
 
 window.addEventListener("resize", adjustCardHeights);
