@@ -1,4 +1,5 @@
-import "./style.css";
+import { Arrow, customLog, destructor, spread } from "./lessons/es6";
+import "./style.scss";
 
 function init() {
   /*   
@@ -15,4 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
   if (main) {
     main.innerHTML = `Let's go`;
   }
+  destructor();
 });
