@@ -1,4 +1,5 @@
-import "./style.css";
+import { badStuff } from "./lessons/typescript/typescript";
+import "./style.scss";
 
 function init() {
   /*   
@@ -15,4 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (main) {
     main.innerHTML = `Let's go`;
   }
+
+  badStuff();
 });
+
+// Higher then other element types
+const foo = (atag: Element) => {
+  // atag -> href einfügen
+};
+
+const div: HTMLDivElement = document.querySelector("div");
+
+foo(div);
